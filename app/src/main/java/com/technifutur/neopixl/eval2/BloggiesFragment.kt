@@ -16,7 +16,7 @@ import com.technifutur.neopixl.eval2.databinding.FragmentBoggliesConnectedBindin
 
 class BloggiesFragment : Fragment() {
 
-    private lateinit var binding : FragmentBloggiesBinding
+    private lateinit var binding: FragmentBloggiesBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,56 +36,47 @@ class BloggiesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.connexionBtn.setOnClickListener {
 
-            if(isValidEmail(binding.emailEditText.text)){
-                val action = R.id.action_bloggiesFragment_to_boggliesConnectedFragment
-                findNavController().navigate(action)
-            }
-            else{
+            if (!isValidEmail(binding.emailEditText.text)) {
                 val builder = AlertDialog.Builder(requireContext())
-                with(builder){
+                with(builder) {
                     setTitle("Erreur")
                     setMessage("Mail incomplet")
-                    setPositiveButton("ok", object : DialogInterface.OnClickListener{
+                    setPositiveButton("ok", object : DialogInterface.OnClickListener {
                         override fun onClick(dialog: DialogInterface?, wich: Int) {
 
                         }
                     })
                 }.show()
-            }
-
-            if (binding.loginEditText.text.isEmpty()){
-                val action = R.id.action_bloggiesFragment_to_boggliesConnectedFragment
-                findNavController().navigate(action)
-
-            } else {
+            } else if (binding.loginEditText.text.isEmpty()) {
                 val builder = AlertDialog.Builder(requireContext())
-                with(builder){
+                with(builder) {
                     setTitle("Erreur")
                     setMessage("Login vide")
-                    setPositiveButton("Ok", object  : DialogInterface.OnClickListener{
+                    setPositiveButton("Ok", object : DialogInterface.OnClickListener {
                         override fun onClick(p0: DialogInterface?, p1: Int) {
 
                         }
 
                     })
                 }.show()
-            }
-
-            if(binding.passwordEditText.text == binding.confirmationEditText.text){
-                val action = R.id.action_bloggiesFragment_to_boggliesConnectedFragment
-                findNavController().navigate(action)
-            }else {
+            } else if (binding.passwordEditText.text == binding.confirmationEditText.text) {
                 val builder = AlertDialog.Builder(requireContext())
-                with(builder){
+                with(builder) {
                     setTitle("Erreur")
                     setMessage("Password ne correspond pas à la confirmation de celui ci ")
-                    setPositiveButton("Ok", object : DialogInterface.OnClickListener{
+                    setPositiveButton("Ok", object : DialogInterface.OnClickListener {
                         override fun onClick(p0: DialogInterface?, p1: Int) {
 
                         }
 
                     })
                 }.show()
+
+
+            } else {
+                val action = R.id.action_bloggiesFragment_to_boggliesConnectedFragment
+                findNavController().navigate(action)
+
             }
 
         }
