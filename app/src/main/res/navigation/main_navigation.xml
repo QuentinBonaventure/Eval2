@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/connexionFragment">
+
+    <fragment
+        android:id="@+id/twitterFragment"
+        android:name="com.technifutur.neopixl.eval2.TwitterFragment"
+        android:label="fragment_twitter"
+        tools:layout="@layout/fragment_twitter" >
+        <action
+            android:id="@+id/action_twitterFragment_to_twitterConnectedFragment"
+            app:destination="@id/twitterConnectedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/facebookFragment"
+        android:name="com.technifutur.neopixl.eval2.FacebookFragment"
+        android:label="fragment_facebook"
+        tools:layout="@layout/fragment_facebook" >
+        <action
+            android:id="@+id/action_facebookFragment_to_facebookConnectedFragment"
+            app:destination="@id/facebookConnectedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bloggiesFragment"
+        android:name="com.technifutur.neopixl.eval2.BloggiesFragment"
+        android:label="fragment_bloggies"
+        tools:layout="@layout/fragment_bloggies" >
+        <action
+            android:id="@+id/action_bloggiesFragment_to_boggliesConnectedFragment"
+            app:destination="@id/boggliesConnectedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/connexionFragment"
+        android:name="com.technifutur.neopixl.eval2.ConnexionFragment"
+        android:label="fragment_connexion"
+        tools:layout="@layout/fragment_connexion" >
+        <action
+            android:id="@+id/action_connexionFragment_to_twitterFragment"
+            app:destination="@id/twitterFragment"
+            app:popUpTo="@id/connexionFragment" />
+        <action
+            android:id="@+id/action_connexionFragment_to_bloggiesFragment"
+            app:destination="@id/bloggiesFragment"
+            app:popUpTo="@id/connexionFragment" />
+        <action
+            android:id="@+id/action_connexionFragment_to_facebookFragment"
+            app:destination="@id/facebookFragment"
+            app:popUpTo="@id/connexionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/facebookConnectedFragment"
+        android:name="com.technifutur.neopixl.eval2.FacebookConnectedFragment"
+        android:label="fragment_facebook_connected"
+        tools:layout="@layout/fragment_facebook_connected" />
+    <fragment
+        android:id="@+id/twitterConnectedFragment"
+        android:name="com.technifutur.neopixl.eval2.TwitterConnectedFragment"
+        android:label="fragment_twitter_connected"
+        tools:layout="@layout/fragment_twitter_connected" />
+    <fragment
+        android:id="@+id/boggliesConnectedFragment"
+        android:name="com.technifutur.neopixl.eval2.BoggliesConnectedFragment"
+        android:label="fragment_bogglies_connected"
+        tools:layout="@layout/fragment_bogglies_connected" />
+</navigation>

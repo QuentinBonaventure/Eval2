@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btnBloggies">Creation d\'un compte Bloggies</string>
+    <string name="facebookBtn">Connexion via Facebook</string>
+    <string name="twitterBtn">Connexion via Twitter</string>
+    <string name="inscriptionBtn">Inscription</string>
+    <string name="messageConnexion">Felicitations , vous êtes bien connectés</string>
+</resources>
